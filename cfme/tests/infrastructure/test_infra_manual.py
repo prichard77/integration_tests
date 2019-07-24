@@ -56,3 +56,28 @@ def test_add_infra_provider_screen():
             5. Form must not be validated.
     """
     pass
+
+@pytest.mark.manual
+@test_requirements.infra_hosts
+def test_setting_default_filter():
+    """
+    Verify the creation and proper functionality of default filters.
+
+    Polarion:
+        assignee: prichard
+        casecomponent: Cloud
+        caseimportance: low
+        initialEstimate: 1/8h
+        testSteps:
+            1. Navigate to the Compute > Infrastructure > Hosts view.
+            2. Select a filter that does not have "(Default)" appended to the name. Note items displayed.
+            3. Click "Select Default" button.
+            4. Logout and log back in to CloudForms and navigate back to the Hosts view.
+        expectedResults:
+            1. Hosts view is displayed with hosts filtered via the Default filter (denoted by
+            "(Default)" next to the filter name in the dropdown).
+            2. Items displayed in the hosts panel will be filtered based upon the filter selected.
+            3. "(Default)" will be displayed beside the filter name in the dropdown.
+            4. Hosts view will be displayed filtered via the new Default filter.
+    """
+    pass

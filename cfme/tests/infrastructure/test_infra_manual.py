@@ -112,16 +112,13 @@ def test_setting_default_filter():
 @test_requirements.infra_hosts
 def test_host_comparison_properties():
     """
-    Verify host comparisons view functionality
-    I am breaking down tests into the compare sections
-	properties, security, configuration, My company tags
-	make sure to include attributes, mode,views and download.
+    Verify host comparisons view functionality for properties section.
 
     Polarion:
         assignee: prichard
         casecomponent: Cloud
         caseimportance: low
-        initialEstimate: 1/8h
+        initialEstimate: 1/4h
         testSteps:
             1. Navigate to the Compute > Infrastructure > Hosts view.
             2. Select at least 2 hosts by checking the box in upper left of host icons.
@@ -154,9 +151,11 @@ def test_host_comparison_properties():
             hosts.
             7. The row should be expanded and displayed with same requirements as in step 4.
             8. The hardware metrics should collapse to one row again.
-            9. A network adapters row should be added to the view for all hosts with % matching graphs displayed for non-base hosts.
+            9. A network adapters row should be added to the view for all hosts with % matching graphs displayed for
+            non-base hosts.
             10. The row should be expanded and displayed with same requirements as in step 4.
-            11. The "#X" individual network adapter rows should be expanded and displayed with same requirements as in step 4.
+            11. The "#X" individual network adapter rows should be expanded and displayed with same requirements as in
+            step 4.
             12. The "#X" individual network adapter rows should collapse to one row again.
             13. The Network Adapters rows should collapse to one row again.
     """
@@ -166,14 +165,15 @@ def test_host_comparison_properties():
 @test_requirements.infra_hosts
 def test_host_comparison_security():
     '''
-    This is going to be a similiar test as test_host_comparison_properties, but for the Security Section.
-    Make sure to expand all subsections and verify the correct display functionality.
+    Verify host comparisons view functionality for security section.
+    This is going to be a similar test as test_host_comparison_properties, but for the Security Section.
+
 
     Polarion:
         assignee: prichard
         casecomponent: Cloud
         caseimportance: low
-        initialEstimate: 1/8h
+        initialEstimate: 1/4h
         testSteps:
             1. Navigate to the Compute > Infrastructure > Hosts view.
             2. Select at least 2 hosts by checking the box in upper left of host icons.
@@ -200,9 +200,10 @@ def test_host_comparison_security():
             Firewall Rules). The new rows should have the following:
             - "% Matched" text or graphs are displayed
             - sub-items that are not empty should have the ">" displayed and be able to be expanded.
-            6. The security row/section should be expanded, displaying all sub-items in the section. Items that do not match the base
-            host should be in blue. The number of properties displayed should match the number denoted on the parent
-            row. Properties for non-base hosts should be in purple/dark blue.
+            6. The security row/section should be expanded, displaying all sub-items in the section.
+            - Items that do not match the base host should be in blue.
+            - The number of properties displayed should match the number denoted on the parent row.
+            - Properties for non-base hosts should be in purple/dark blue.
             7. The section should collapse again to only display the parent row.
             8. Same expected results as for step 6 and 7.
     '''
@@ -212,14 +213,14 @@ def test_host_comparison_security():
 @test_requirements.infra_hosts
 def test_host_comparison_configuration():
     '''
-    This is going to be the same test as test_host_comparison_properties, but for the Configuration Section.
-    Make sure to expand all subsections and verify the correct display functionality.
+    Verify host comparisons view functionality for configuration section.
+    This is going to be similar as test_host_comparison_security, but for the Configuration Section.
 
     Polarion:
         assignee: prichard
         casecomponent: Cloud
         caseimportance: low
-        initialEstimate: 1/8h
+        initialEstimate: 1/4h
         testSteps:
             1. Navigate to the Compute > Infrastructure > Hosts view.
             2. Select at least 2 hosts (three if possible) by checking the box in upper left of host icons.
@@ -247,9 +248,10 @@ def test_host_comparison_configuration():
             Applications, ...). The new rows should have the following:
             - "% Matched" text or graphs are displayed
             - sub-items that are not empty should have the ">" displayed and be able to be expanded.
-            6. The configuration row/section should be expanded, displaying all sub-items in the section. Items that do not match the base
-            host should be in blue. The number of properties displayed should match the number denoted on the parent
-            row. Properties for non-base hosts should be in purple/dark blue.
+            6. The configuration row/section should be expanded, displaying all sub-items in the section.
+            - Items that do not match the base host should be in blue.
+            - The number of properties displayed should match the number denoted on the parent row.
+            - Properties for non-base hosts should be in purple/dark blue.
             7. The section should collapse again to only display the parent row.
             8. Same expected results as for step 6 and 7.
     '''
@@ -259,14 +261,14 @@ def test_host_comparison_configuration():
 @test_requirements.infra_hosts
 def test_host_comparison_my_company_tags():
     '''
+    Verify host comparisons view functionality for 'My Company Tags' section.
     This is going to be the same test as test_host_comparison_properties, but for the "My Company Tags" section.
-    Make sure to expand all subsections and verify the correct display functionality.
 
     Polarion:
         assignee: prichard
         casecomponent: Cloud
         caseimportance: low
-        initialEstimate: 1/8h
+        initialEstimate: 1/4h
         testSteps:
             1. Navigate to the Compute > Infrastructure > Hosts view.
             2. Select at least 2 hosts (three if possible) by checking the box in upper left of host icons.
@@ -294,42 +296,11 @@ def test_host_comparison_my_company_tags():
             Customer, ...). The new rows should have the following:
             - "% Matched" text or graphs are displayed
             - sub-items that are not empty should have the ">" displayed and be able to be expanded.
-            6. The "My Company Tags" row/section should be expanded, displaying all sub-items in the section. Items that do not match the base
-            host should be in blue. The number of properties displayed should match the number denoted on the parent
-            row. Properties for non-base hosts should be in purple/dark blue.
+            6. The "My Company Tags" row/section should be expanded, displaying all sub-items in the section.
+            - Items that do not match the base host should be in blue.
+            - The number of properties displayed should match the number denoted on the parent row.
+            - Properties for non-base hosts should be in purple/dark blue.
             7. The section should collapse again to only display the parent row.
             8. Same expected results as for step 6 and 7.
-    '''
-    pass
-
-@pytest.mark.manual
-@test_requirements.infra_hosts
-def test_host_comparison_remove_hosts():
-    pass
-
-@pytest.mark.manual
-@test_requirements.infra_hosts
-def test_host_comparison_exists_mode():
-    pass
-
-@pytest.mark.manual
-@test_requirements.infra_hosts
-def test_host_comparison_compressed_view():
-    pass
-
-@pytest.mark.manual
-@test_requirements.infra_hosts
-def test_host_comparison_download():
-'''
-	include txt, csv, pdf-export + print
-'''
-    pass
-
-@pytest.mark.manual
-@test_requirements.infra_hosts
-def test_host_comparison_multipleviews_interactions():
-    '''
-    Here i will test adding and removing rows and sections in permutations I did not cover explictily already.
-    Also cover the case where clicking on the parent section selects all of the child sections.
     '''
     pass

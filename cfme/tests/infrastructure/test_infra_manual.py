@@ -107,3 +107,117 @@ def test_setting_default_filter():
             4. Hosts view will be displayed filtered via the new Default filter.
     """
     pass
+
+@pytest.mark.manual
+@test_requirements.infra_hosts
+def test_host_comparison_properties():
+    """
+    Verify host comparisons view functionality
+    I am breaking down tests into the compare sections
+	properties, security, configuration, My company tags
+	make sure to include attributes, mode,views and download.
+
+    Polarion:
+        assignee: prichard
+        casecomponent: Cloud
+        caseimportance: low
+        initialEstimate: 1/8h
+        testSteps:
+            1. Navigate to the Compute > Infrastructure > Hosts view.
+            2. Select at least 2 hosts by checking the box in upper left of host icons.
+            3. Click "Compare Selected Items" under the "Configuration" dropdown.
+            4. Click on "Host Properties(X)" in the Compare Host view.
+            5. Click on "Host Properties(X)" again, in the Compare Host view.
+            6. Click to expand the "Properties" comparison section, select "Hardware", and click "Apply".
+            7. Click on "Hardware(X)" in the Compare Host view.
+            8. Click on "Hardware(X)" again, in the Compare Host view.
+            9. Click to expand the "Properties" comparison section, select "Network Adapters", and click "Apply".
+            10. Click on "Network Adapters(X)" in the Compare Host view.
+            11. Click on the "#X" items that apply to the network adaters.
+            12. Click on the "#X" items again that apply to the network adaters.
+            13. Click on "Network Adapters(X)" again, in the Compare Host view.
+            **now uncheck Host properties and then Hardware in Comp sctions
+        expectedResults:
+            1. Hosts view is displayed with hosts filtered via the Default filter (denoted by
+            "(Default)" next to the filter name in the dropdown).
+            2. The selected hosts should be displayed with a blue border and checked checkbox.
+            3. The "Compare Host / Node" view should be displayed.
+            - icons are displayed for all and only selected hosts with hostname displayed
+            - one of the host icons has the host denoted as "(base)" in the hostname
+            - host properties row is displayed (default)
+            - "% Matched" text or graphs are displayed
+            - when 3 or more hosts are displayed, remove icons exist for all non-base hosts.
+            4. The row should be expanded to display all of the properties compared. Items that do not match the base
+            host should be in blue. There should be X properties displayed. Properties for non-base hosts should be in
+            purple/dark blue.
+            5. The Host properties should collapse to one row again.
+            6. A hardware row should be added to the view for all hosts with % matching graphs displayed for non-base
+            hosts.
+            7. The row should be expanded and displayed with same requirements as in step 4.
+            8. The hardware metrics should collapse to one row again.
+            9. A network adapters row should be added to the view for all hosts with % matching graphs displayed for non-base hosts.
+            10. The row should be expanded and displayed with same requirements as in step 4.
+            11. The "#X" individual network adapter rows should be expanded and displayed with same requirements as in step 4.
+            12. The Hardware metrics should collapse to one row again.
+
+            ****add a step for clicking on the Properties checkbox to check all subsections.
+    """
+    pass
+
+@pytest.mark.manual
+@test_requirements.infra_hosts
+def test_host_comparison_security():
+    '''
+    This is going to be the same test as test_host_comparison_properties, but for the Security Section.
+    Make sure to expand all subsections and verify the correct display functionality.
+    I will add some steps that reference the properties test.
+    '''
+    pass
+
+@pytest.mark.manual
+@test_requirements.infra_hosts
+def test_host_comparison_configuration():
+    '''
+    This is going to be the same test as test_host_comparison_properties, but for the Configuration Section.
+    Make sure to expand all subsections and verify the correct display functionality.
+    I will add some steps that reference the properties test.
+    '''
+    pass
+
+@pytest.mark.manual
+@test_requirements.infra_hosts
+def test_host_comparison_my_company_tags():
+    '''
+    This is going to be the same test as test_host_comparison_properties, but for the My Company Tags Section.
+    Make sure to expand all subsections and verify the correct display functionality.
+    I will add some steps that reference the properties test.
+    '''
+    pass
+
+@pytest.mark.manual
+@test_requirements.infra_hosts
+def test_host_comparison_remove_hosts():
+    pass
+
+@pytest.mark.manual
+@test_requirements.infra_hosts
+def test_host_comparison_exists_mode():
+    pass
+
+@pytest.mark.manual
+@test_requirements.infra_hosts
+def test_host_comparison_compressed_view():
+    pass
+
+@pytest.mark.manual
+@test_requirements.infra_hosts
+def test_host_comparison_download():
+'''
+	include txt, csv, pdf-export + print
+'''
+    pass
+
+@pytest.mark.manual
+@test_requirements.infra_hosts
+def test_host_comparison_multipleviews_interactions():
+    pass

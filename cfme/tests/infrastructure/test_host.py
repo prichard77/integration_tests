@@ -473,8 +473,8 @@ def test_infrastructure_hosts_compare(appliance, setup_provider_min_hosts, provi
 
 
 @test_requirements.infra_hosts
-@pytest.mark.meta(blockers=[BZ(1747545, forced_streams=["5.10"])], automates=[1747545, 1738664,
-                                                                             1746214])
+@pytest.mark.uncollectif(lambda provider: provider.one_of(RHEVMProvider),
+                        reason="RHV providers blocked for BZ 1805803 marked WONTFIX")
 @pytest.mark.parametrize("num_hosts", [2, 4])
 @pytest.mark.parametrize("hosts_collection", ["provider", "appliance"])
 @pytest.mark.parametrize('report_format', DownloadOptions, ids=[fmt.name for fmt in
